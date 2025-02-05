@@ -266,10 +266,16 @@
       </div>
 
       <div class="dropdown flex-as-c">
-        <button class="dropBtn">
-          <span>관련사이트</span>
-          <span class="ico"><i class="fa-solid fa-angle-down"></i></span>
-        </button>
+        <button class="dropBtn">관련사이트</button>
+
+        <div class="dropdown_content">
+          <ul>
+            <li><a href="#none"><span>카카오뱅크 AD</span></a></li>
+            <li><a href="#none"><span>카카오뱅크 인증서</span></a></li>
+            <li><a href="#none"><span>금융기술연구소</span></a></li>
+            <li><a href="#none"><span>기술블로그</span></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -429,6 +435,10 @@
     }
 
     /* 관련사이트 */
+    .top_bar .dropdown {
+      position: relative;
+    }
+
     .top_bar .dropdown .dropBtn {
       background: rgba(244, 244, 244, 0.8);
       color: rgba(68, 68, 68, 1);
@@ -440,10 +450,40 @@
       font-size: 15px;
       cursor: pointer;
     }
+    .top_bar .dropdown .dropBtn::after {
+        content: "";
+        display: inline-block;
+        margin-left: 10px;
+        width: 12px;
+        height: 12px;
+        background: url(https://www.kakaobank.com/static/images/web/svg_line_arrow_down.svg);
+        background-size: 12px 12px;
+    }
 
-    .top_bar .dropdown .dropBtn .ico {
-      display: inline-block;
-      margin-left: 5px;
+    .top_bar .dropdown .dropdown_content {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      background-color: #fff;
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+      border-radius: 6px;
+      margin-top: 30px;
+      width: 240px;
+      transform: translateX(-50%);
+      overflow: hidden;
+      visibility: hidden;
+    }
+    .top_bar .dropdown .dropdown_content ul li a {
+      display: block;
+      font-size: 13px;
+      padding: 0 24px;
+      line-height: 48px;
+    }
+    .top_bar .dropdown .dropdown_content ul li a:hover {
+      text-decoration: underline;
+    }
+    .top_bar .is-active {
+      visibility: visible;
     }
     /* 탑바 끝 */
   </style>
