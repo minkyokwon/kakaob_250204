@@ -22,10 +22,22 @@
 
       <div class="menu_box">
         <ul class="flex height-100p">
-          <li><a href="#none" class="flex flex-ai-c height-100p">은행소개</a></li>
-          <li><a href="#none" class="flex flex-ai-c height-100p">IR투자정보</a></li>
-          <li><a href="#none" class="flex flex-ai-c height-100p">상품안내</a></li>
-          <li><a href="#none" class="flex flex-ai-c height-100p">고객센터</a></li>
+          <li>
+            <a href="#none" class="flex flex-ai-c height-100p">은행소개</a>
+            <ul></ul>
+          </li>
+          <li>
+            <a href="#none" class="flex flex-ai-c height-100p">IR투자정보</a>
+            <ul></ul>
+          </li>
+          <li>
+            <a href="#none" class="flex flex-ai-c height-100p">상품안내</a>
+            <ul></ul>
+          </li>
+          <li>
+            <a href="#none" class="flex flex-ai-c height-100p">고객센터</a>
+            <ul></ul>
+          </li>
         </ul>
       </div>
 
@@ -138,7 +150,8 @@
 
     /* 탑바 텍스트 */
     .top_bar .menu_box > ul > li > a {
-      padding: 0 24px;
+      margin: 0 12px;
+      padding: 0 12px;
       position: relative;
     }
     .top_bar .menu_box > ul > li > a:hover {
@@ -155,6 +168,28 @@
       display: none;
     }
     .top_bar .menu_box > ul > li:hover > a::after {
+      display: block;
+    }
+    /* 메뉴 박스 - 2차 메뉴 */
+    .top_bar .menu_box > ul > li > ul {
+      width: 100%;
+      height: 200px;
+      background-color: pink;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      display: none;
+    }
+    .top_bar .menu_box > ul > li:nth-child(2) > ul {
+      background-color: skyblue;
+    }
+    .top_bar .menu_box > ul > li:nth-child(3) > ul {
+      background-color: grey;
+    }
+    .top_bar .menu_box > ul > li:nth-child(4) > ul {
+      background-color: thistle;
+    }
+    .top_bar .menu_box > ul > li:hover > ul {
       display: block;
     }
 
