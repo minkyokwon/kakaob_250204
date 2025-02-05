@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- 폰트어썸 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- 제이쿼리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <title>카카오뱅크</title>
 </head>
 
@@ -34,8 +36,8 @@
                       <li><a href="#" class="block">주주사 소개</a></li>
                       <li><a href="#" class="block">오시는 길</a></li>
                       <li><a href="#" class="block">제휴문의</a></li>
-                      <li><a href="#" class="block">금융기술연구소 </a></li>
-                      <li><a href="#" class="block">카카오뱅크 인증서</a></li>
+                      <li><a href="#" class="block nav-anchor" target="_blank">금융기술연구소 </a></li>
+                      <li><a href="#" class="block nav-anchor" target="_blank">카카오뱅크 인증서</a></li>
                     </ul>
                   </li>
                   <li>
@@ -52,7 +54,7 @@
                       <li><a href="#" class="block">입찰공고</a></li>
                   </ul>
                   </li>
-                  <li><a href="#none">인재영입</a></li>
+                  <li><a href="#none" class="nav-anchor" target="_blank">인재영입</a></li>
                 </ul>
               </div>
             </div>
@@ -103,7 +105,7 @@
                     <a href="#none">IR일정</a>
                     <ul>
                       <li><a href="#" class="block">IR행사</a></li>
-                      <li><a href="#" class="block">IR미팅예약</a></li>
+                      <li><a href="#" class="block nav-anchor" target="_blank">IR미팅예약</a></li>
                       <li><a href="#" class="block">주주총회</a></li>
                     </ul>
                   </li>
@@ -277,6 +279,14 @@
           </ul>
         </div>
       </div>
+
+      <div class="nav-ico flex-as-c">
+        <a href="#none" class="global_logo flex flex-ai-c">
+          <span class="global_image">
+            <img src="https://www.kakaobank.com/static/images/web/icon_eng.svg" alt="">
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -427,11 +437,35 @@
       text-align: center;
       font-size: 17px;
     }
+    .top_bar .menu_box > ul > li .menu_sub > ul > li > a[target="_blank"]::after {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background: url(https://www.kakaobank.com/static/images/web/svg_line_outlink.svg
+      );
+      background-size: 18px 18px;
+      margin-top: -6px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
     .top_bar .menu_box > ul > li .menu_sub > ul ul > li > a {
       font-size: 13px;
       color: #444;
       text-align: center;
       margin-bottom: 24px;
+    }
+    .top_bar .menu_box > ul > li .menu_sub > ul ul > li >a[target="_blank"]::after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: url(https://www.kakaobank.com/static/images/web/svg_line_outlink.svg
+      );
+      background-size: 14px 14px;
+      margin-top: -4px;
+      margin-left: 4px;
+      vertical-align: middle;
     }
 
     /* 관련사이트 */
@@ -458,20 +492,31 @@
         height: 12px;
         background: url(https://www.kakaobank.com/static/images/web/svg_line_arrow_down.svg);
         background-size: 12px 12px;
+        transition: all .3s;
+    }
+    .top_bar .dropdown .dropBtn.rotate::after {
+      transform: rotate(-180deg);
     }
 
     .top_bar .dropdown .dropdown_content {
       position: absolute;
-      left: 50%;
+      left: -20%;
       top: 100%;
       background-color: #fff;
       box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
       border-radius: 6px;
       margin-top: 30px;
       width: 240px;
-      transform: translateX(-50%);
       overflow: hidden;
       visibility: hidden;
+      transform: translateY(4px);
+      transition: all .1s linear;
+      opacity: 0;
+    }
+    .top_bar .dropdown .is-active {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
     }
     .top_bar .dropdown .dropdown_content ul li a {
       display: block;
@@ -481,15 +526,64 @@
     }
     .top_bar .dropdown .dropdown_content ul li a:hover {
       text-decoration: underline;
+      background-color: #f7f7f7;
     }
-    .top_bar .is-active {
-      visibility: visible;
+    .top_bar .dropdown .dropdown_content ul li a span::after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: url(https://www.kakaobank.com/static/images/web/svg_line_outlink.svg
+      );
+      background-size: 12px 12px;
+      margin-top: -4px;
+      margin-left: 8px;
+      vertical-align: middle;
     }
+    /* 글로벌 로고 */
+    .top_bar .nav-ico {
+      display: inline-block;
+      height: 80px;
+      width: 30px;
+      line-height: 20px;
+      vertical-align: middle;
+      position: relative;
+    }
+    .top_bar .nav-ico .global_logo {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      transform: translate(-50%, -50%);
+    }
+    .top_bar .nav-ico .global_logo .global_image img {
+      display: block;
+      background: url(https://www.kakaobank.com/static/images/web/icon_eng.svg);
+      background-size: 20px 20px;
+      opacity: 1;
+    }
+    .top_bar .nav-ico:hover .global_logo .global_image img {
+      opacity: 0.5;
+    }
+    
     /* 탑바 끝 */
   </style>
 
   <script>
+    $('.dropBtn').click(function() {
+      var $dropdownContent = $('.dropdown_content');
 
+      if ($dropdownContent.hasClass("is-active")) {
+        $dropdownContent.removeClass("is-active");
+        $(this).removeClass('rotate');
+      } else {
+        $dropdownContent.addClass("is-active");
+        $(this).addClass('rotate');
+      };
+    });
   </script>
 
 </body>
