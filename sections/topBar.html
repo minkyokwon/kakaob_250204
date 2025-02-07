@@ -52,7 +52,7 @@
                     <ul>
                       <li><a href="#" class="block">공지사항</a></li>
                       <li><a href="#" class="block">입찰공고</a></li>
-                  </ul>
+                    </ul>
                   </li>
                   <li><a href="#none" class="nav-anchor" target="_blank">인재영입</a></li>
                 </ul>
@@ -389,15 +389,17 @@
     }
 
     /* 탑바 텍스트 */
-    .top_bar .menu_box > ul > li > a {
+    .top_bar .menu_box>ul>li>a {
       margin: 0 12px;
       padding: 0 12px;
       position: relative;
     }
-    .top_bar .menu_box > ul > li > a:hover {
+
+    .top_bar .menu_box>ul>li>a:hover {
       text-decoration: underline;
     }
-    .top_bar .menu_box > ul > li > a::after {
+
+    .top_bar .menu_box>ul>li>a::after {
       content: "";
       background-color: #000;
       width: 100%;
@@ -407,11 +409,13 @@
       left: 0;
       display: none;
     }
-    .top_bar .menu_box > ul > li:hover > a::after {
+
+    .top_bar .menu_box>ul>li:hover>a::after {
       display: block;
     }
+
     /* 메뉴 박스 - 2차 메뉴 */
-    .top_bar .menu_box > ul > li > div {
+    .top_bar .menu_box>ul>li>div {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       width: 100%;
       background-color: #fff;
@@ -422,46 +426,53 @@
       padding: 60px 0 36px 0;
       box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
     }
-    .top_bar .menu_box > ul > li:hover > div {
+
+    .top_bar .menu_box>ul>li:hover>div {
       display: block;
     }
-    .top_bar .menu_box > ul > li .menu_sub > ul > li {
+
+    .top_bar .menu_box>ul>li .menu_sub>ul>li {
       width: calc(100% / 6);
     }
-    .top_bar .menu_box > ul > li:first-child .menu_sub > ul > li {
+
+    .top_bar .menu_box>ul>li:first-child .menu_sub>ul>li {
       width: calc(100% / 4);
     }
-    .top_bar .menu_box > ul > li .menu_sub > ul > li > a {
+
+    .top_bar .menu_box>ul>li .menu_sub>ul>li>a {
       display: block;
       margin-bottom: 20px;
       text-align: center;
       font-size: 17px;
     }
-    .top_bar .menu_box > ul > li .menu_sub > ul > li > a[target="_blank"]::after {
+
+    .top_bar .menu_box>ul>li .menu_sub>ul>li>a[target="_blank"]::after {
       content: "";
       display: inline-block;
       width: 18px;
       height: 18px;
       background: url(https://www.kakaobank.com/static/images/web/svg_line_outlink.svg
-      );
+);
       background-size: 18px 18px;
       margin-top: -6px;
       margin-left: 8px;
       vertical-align: middle;
     }
-    .top_bar .menu_box > ul > li .menu_sub > ul ul > li > a {
+
+    .top_bar .menu_box>ul>li .menu_sub>ul ul>li>a {
       font-size: 13px;
       color: #444;
       text-align: center;
       margin-bottom: 24px;
     }
-    .top_bar .menu_box > ul > li .menu_sub > ul ul > li >a[target="_blank"]::after {
+
+    .top_bar .menu_box>ul>li .menu_sub>ul ul>li>a[target="_blank"]::after {
       content: "";
       display: inline-block;
       width: 14px;
       height: 14px;
       background: url(https://www.kakaobank.com/static/images/web/svg_line_outlink.svg
-      );
+);
       background-size: 14px 14px;
       margin-top: -4px;
       margin-left: 4px;
@@ -484,16 +495,18 @@
       font-size: 15px;
       cursor: pointer;
     }
+
     .top_bar .dropdown .dropBtn::after {
-        content: "";
-        display: inline-block;
-        margin-left: 10px;
-        width: 12px;
-        height: 12px;
-        background: url(https://www.kakaobank.com/static/images/web/svg_line_arrow_down.svg);
-        background-size: 12px 12px;
-        transition: all .3s;
+      content: "";
+      display: inline-block;
+      margin-left: 10px;
+      width: 12px;
+      height: 12px;
+      background: url(https://www.kakaobank.com/static/images/web/svg_line_arrow_down.svg);
+      background-size: 12px 12px;
+      transition: all .3s;
     }
+
     .top_bar .dropdown .dropBtn.rotate::after {
       transform: rotate(-180deg);
     }
@@ -513,33 +526,38 @@
       transition: all .1s linear;
       opacity: 0;
     }
+
     .top_bar .dropdown .is-active {
       opacity: 1;
       transform: translateY(0);
       visibility: visible;
     }
+
     .top_bar .dropdown .dropdown_content ul li a {
       display: block;
       font-size: 13px;
       padding: 0 24px;
       line-height: 48px;
     }
+
     .top_bar .dropdown .dropdown_content ul li a:hover {
       text-decoration: underline;
       background-color: #f7f7f7;
     }
+
     .top_bar .dropdown .dropdown_content ul li a span::after {
       content: "";
       display: inline-block;
       width: 12px;
       height: 12px;
       background: url(https://www.kakaobank.com/static/images/web/svg_line_outlink.svg
-      );
+);
       background-size: 12px 12px;
       margin-top: -4px;
       margin-left: 8px;
       vertical-align: middle;
     }
+
     /* 글로벌 로고 */
     .top_bar .nav-ico {
       display: inline-block;
@@ -549,6 +567,7 @@
       vertical-align: middle;
       position: relative;
     }
+
     .top_bar .nav-ico .global_logo {
       width: 20px;
       height: 20px;
@@ -559,21 +578,23 @@
       bottom: 0;
       transform: translate(-50%, -50%);
     }
+
     .top_bar .nav-ico .global_logo .global_image img {
       display: block;
       background: url(https://www.kakaobank.com/static/images/web/icon_eng.svg);
       background-size: 20px 20px;
       opacity: 1;
     }
+
     .top_bar .nav-ico:hover .global_logo .global_image img {
       opacity: 0.5;
     }
-    
+
     /* 탑바 끝 */
   </style>
 
   <script>
-    $('.dropBtn').click(function() {
+    $('.dropBtn').click(function () {
       var $dropdownContent = $('.dropdown_content');
 
       if ($dropdownContent.hasClass("is-active")) {
