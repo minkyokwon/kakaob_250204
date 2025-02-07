@@ -38,8 +38,39 @@
 
   <div class="md_divider"></div>
   <section class="md_sec md_sec_2 con">
-    <div></div>
-    <div></div>
+    <div>
+      <div class="txt_box">
+        <h3>
+          우대조건 없이
+          <br>
+          합리적인 예금과 적금
+        </h3>
+        <p>
+          기대했던 금리와 다르게 복잡한 우대조건에 실망한 적이 있었나요?
+          <br>
+          카카오뱅크의 예금, 적금은 숨겨진 우대조건 없이 누구에게나 편리하고 합리적입니다.
+        </p>
+        <div class="btn_box">
+          <a href="#none">
+            정기예금
+            <img src="/images/home_arr.png" alt="" class="ico_arr">
+          </a>
+          <a href="#none">
+            자유적금
+            <img src="/images/home_arr.png" alt="" class="ico_arr">
+          </a>
+        </div>
+        <div class="img_box_1">
+          <img src="/images/main-savings-money.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="img-box">
+        <img src="/images/main-savings.png" alt="">
+      </div>
+    </div>
   </section>
 
   <div class="md_divider"></div>
@@ -155,6 +186,8 @@
     }
     .md_sec > div:first-child {
       width: 50%;
+      display: flex;
+      align-items: center;
     }
     .md_sec > div:last-child {
       flex-grow: 1;
@@ -164,12 +197,6 @@
     .md_divider {
       height: 32px;
       background-color: #fafafa;
-    }
-    /* 공통섹션 끝 */
-
-    /* 섹션 1 시작 */
-    .md_sec .img-box {
-      width: 473px;
     }
     .md_sec .txt_box h3 {
       font-size: 40px;
@@ -184,6 +211,7 @@
     }
     .md_sec .txt_box .btn_box {
       margin-top: 30px;
+      display: flex;
     }
     .md_sec .txt_box .btn_box a {
       background-color: #f6f6f6;
@@ -203,7 +231,32 @@
       margin: 5.5px 0 0 8px;
       vertical-align: text-top;
     }
+    /* 공통섹션 끝 */
+
+    /* 섹션 1 시작 */
+    .md_sec_1 .img-box {
+      width: 473px;
+    }
     /* 섹션 1 끝 */
+
+    /* 섹션 2 시작 */
+    .md_sec_2 .img-box {
+      width: 409px;
+      margin-left: 120px;
+    }
+    .md_sec_2 .txt_box > .btn_box > a {
+      width: 158px;
+      margin-right: 6px;
+    }
+    .md_sec_2 .txt_box > .img_box_1 {
+      width: 440px;
+      margin-top: 50px;
+    }
+    .md_sec_2 .txt_box > .img_box_1 > img {
+      display: block;
+      width: 100%;
+    }
+    /* 섹션 2 끝 */
     /* 중간섹션 끝*/
   </style>
 </body>
