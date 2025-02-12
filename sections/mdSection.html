@@ -8,8 +8,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap"
     rel="stylesheet">
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- lodash -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
   <title>카카오뱅크</title>
@@ -335,12 +335,15 @@
     .md_sec_1 {
       height: 750px;
     }
-    .md_sec_1 > div:first-child > * {
+
+    .md_sec_1>div:first-child>* {
       margin-left: 40px;
     }
-    .md_sec_1 > div:last-child > * {
+
+    .md_sec_1>div:last-child>* {
       margin-left: 90px;
     }
+
     .md_sec_1 .img-box {
       width: 473px;
     }
@@ -351,10 +354,12 @@
     .md_sec_2 {
       height: 750px;
     }
-    .md_sec_2 > div:first-child > * {
+
+    .md_sec_2>div:first-child>* {
       margin-left: 70px;
     }
-    .md_sec_2 > div:last-child > * {
+
+    .md_sec_2>div:last-child>* {
       margin-left: 120px;
     }
 
@@ -362,12 +367,14 @@
       width: 409px;
       margin-left: 120px;
     }
-    .md_sec_2 .img-box > img {
+
+    .md_sec_2 .img-box>img {
       transform: translateX(30%);
       opacity: 0;
       transition: all, transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;
     }
-    .md_sec_2 .img-box.active > img {
+
+    .md_sec_2 .img-box.active>img {
       transform: translateX(0%);
       opacity: 1;
     }
@@ -392,10 +399,12 @@
     .md_sec_3 {
       height: 750px;
     }
-    .md_sec_3 > div:first-child > * {
+
+    .md_sec_3>div:first-child>* {
       margin-left: 60px;
     }
-    .md_sec_3 > div:last-child > * {
+
+    .md_sec_3>div:last-child>* {
       margin-left: 90px;
     }
 
@@ -409,10 +418,12 @@
     .md_sec_4 {
       height: 650px;
     }
-    .md_sec_4 > div:first-child > * {
+
+    .md_sec_4>div:first-child>* {
       margin-left: 130px;
     }
-    .md_sec_4 > div:last-child > * {
+
+    .md_sec_4>div:last-child>* {
       margin-left: 40px;
     }
 
@@ -427,10 +438,12 @@
       background: #fff url(/images/home_map.png) no-repeat -12% 50%;
       overflow: hidden;
     }
-    .md_sec_5 > div:first-child > * {
+
+    .md_sec_5>div:first-child>* {
       margin-left: 80px;
     }
-    .md_sec_5 > div:last-child > * {
+
+    .md_sec_5>div:last-child>* {
       margin-left: 90px;
     }
 
@@ -441,12 +454,14 @@
     .md_sec_5 .img-box {
       width: 408px;
     }
-    .md_sec_5 .img-box > img {
+
+    .md_sec_5 .img-box>img {
       transform: translateY(30%);
       opacity: 0;
       transition: all, transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;
     }
-    .md_sec_5 .img-box.active > img {
+
+    .md_sec_5 .img-box.active>img {
       transform: translateX(0%);
       opacity: 1;
     }
@@ -458,7 +473,7 @@
   <script>
     /* 발견되면 활성화시키는 라이브러리 시작 */
     function ActiveOnVisible__init() {
-      $('.active-on-visible').each(function(index, node) {
+      $('.active-on-visible').each(function (index, node) {
         var $node = $(node);
 
         var onFuncName = $node.attr('data-active-on-visible-on-func-name');
@@ -478,7 +493,7 @@
     function ActiveOnVisible__initOffset() {
       var windowHeight = $(window).height();
 
-      $('.active-on-visible:not(.actived)').each(function(index, node) {
+      $('.active-on-visible:not(.actived)').each(function (index, node) {
         var $node = $(node);
 
         var offsetTop = $node.offset().top;
@@ -487,30 +502,30 @@
         var translateX = matrix[12] || matrix[4];
         var translateY = matrix[13] || matrix[5];
 
-        if ( translateY ) {
+        if (translateY) {
           offsetTop -= translateY;
         }
 
         $node.attr('data-active-on-visible-offsetTop', offsetTop);
         $node.data('data-active-on-visible-offsetTop', offsetTop);
 
-        if ( !$node.attr('data-active-on-visible-diff-y') ) {
+        if (!$node.attr('data-active-on-visible-diff-y')) {
           $node.attr('data-active-on-visible-diff-y', '0');
         }
 
-        if ( !$node.attr('data-active-on-visible-delay') ) {
+        if (!$node.attr('data-active-on-visible-delay')) {
           $node.attr('data-active-on-visible-delay', '0');
         }
 
         var diffY = $node.attr('data-active-on-visible-diff-y');
         var delay = $node.attr('data-active-on-visible-delay');
 
-        if ( diffY.substr(-2, 2) == 'vh' ) {
+        if (diffY.substr(-2, 2) == 'vh') {
           diffY = parseInt(diffY);
 
           diffY = windowHeight * (diffY / 100);
         }
-        else if ( diffY.substr(-1, 1) == '%' ) {
+        else if (diffY.substr(-1, 1) == '%') {
           diffY = parseInt(diffY);
 
           diffY = $node.height() * (diffY / 100);
@@ -528,7 +543,7 @@
     }
 
     function ActiveOnVisible__checkAndActive() {
-      $('.active-on-visible:not(.actived)').each(function(index, node) {
+      $('.active-on-visible:not(.actived)').each(function (index, node) {
         var $node = $(node);
 
         var offsetTop = $node.data('data-active-on-visible-offsetTop') * 1;
@@ -542,26 +557,26 @@
         var windowHeight = $(window).height();
         var nodeHeight = $node.height();
 
-        if ( scrollTop + windowHeight + diffY > offsetTop ) {
-          setTimeout(function() {
-            if ( $node.hasClass('active') == false ) {
+        if (scrollTop + windowHeight + diffY > offsetTop) {
+          setTimeout(function () {
+            if ($node.hasClass('active') == false) {
               $node.addClass('active');
 
-              if ( $node.hasClass('can-active-once') ) {
+              if ($node.hasClass('can-active-once')) {
                 $node.addClass('actived');
               }
 
-              if ( window[onFuncName] ) {
+              if (window[onFuncName]) {
                 window[onFuncName]($node);
               }
             }
           }, delay);
         }
         else {
-          if ( $node.hasClass('active') ) {
+          if ($node.hasClass('active')) {
             $node.removeClass('active');
 
-            if ( window[offFuncName] ) {
+            if (window[offFuncName]) {
               window[offFuncName]($node);
             }
           }
@@ -569,7 +584,7 @@
       });
     }
 
-    $(function() {
+    $(function () {
       ActiveOnVisible__init();
     })
     /* 발견되면 활성화시키는 라이브러리 끝 */
