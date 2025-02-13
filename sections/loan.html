@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
   <title>카카오뱅크</title>
 </head>
+
 <body>
   <h1>스크롤</h1>
-  <div class="con-min-width loan_box active-on-visible" data-active-on-visible-diff-y="-200" data-active-on-visible-delay="1000">
-    <div class="sky">
+  <div class="con-min-width loan_box active-on-visible" data-active-on-visible-diff-y="-200"
+    data-active-on-visible-delay="1000">
+    <div class="sky night">
+      <div class="stars">
+        <span class="ico-star ico-star-1"></span>
+        <span class="ico-star ico-star-2"></span>
+        <span class="ico-star ico-star-3"></span>
+        <span class="ico-star ico-star-4"></span>
+        <span class="ico-star ico-star-5"></span>
+        <span class="ico-star ico-star-6"></span>
+        <span class="ico-star ico-star-7"></span>
+      </div>
       <div class="blue"></div>
       <div class="moon">
         <div class="base"></div>
@@ -22,7 +34,8 @@
     </div>
 
     <div class="con">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. A ipsam libero laboriosam dolorum, similique sed suscipit ducimus quo, ut consequatur odit totam officiis. Saepe ducimus accusantium sint, veritatis numquam odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A ipsam libero laboriosam dolorum, similique sed suscipit
+      ducimus quo, ut consequatur odit totam officiis. Saepe ducimus accusantium sint, veritatis numquam odio.
     </div>
   </div>
 
@@ -128,10 +141,12 @@
       z-index: 0;
       margin-top: 1000px;
     }
-    .loan_box > .con {
+
+    .loan_box>.con {
       position: relative;
     }
-    .loan_box > .sky {
+
+    .loan_box>.sky {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -139,7 +154,8 @@
       left: 0;
       z-index: -1;
     }
-    .loan_box > .sky > .blue {
+
+    .loan_box>.sky>.blue {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -148,10 +164,12 @@
       background-color: #559cde;
       transition: height .85s;
     }
-    .loan_box.active > .sky > .blue {
+
+    .loan_box.active>.sky>.blue {
       height: 0;
     }
-    .loan_box > .sky > .moon {
+
+    .loan_box>.sky>.moon {
       width: 112px;
       height: 112px;
       position: absolute;
@@ -159,17 +177,20 @@
       left: calc(50% + 450px);
       overflow: hidden;
     }
-    .loan_box > .sky > .moon > .base {
+
+    .loan_box>.sky>.moon>.base {
       width: 110px;
       height: 110px;
       background-color: #ffdc00;
       border-radius: 50%;
       transition: background-color .85s;
     }
-    .loan_box.active > .sky > .moon > .base {
+
+    .loan_box.active>.sky>.moon>.base {
       background-color: #fff;
     }
-    .loan_box > .sky > .moon > .shadow {
+
+    .loan_box>.sky>.moon>.shadow {
       width: 100%;
       height: 100%;
       background-color: #333d58;
@@ -179,17 +200,107 @@
       border-radius: 50%;
       transition: all .85s .2s;
     }
-    .loan_box.active > .sky > .moon > .shadow {
+
+    .loan_box.active>.sky>.moon>.shadow {
       top: -23%;
       left: -23%;
     }
+
+    /* 대출박스 - 별 시작 */
+    .loan_box > .sky .ico-star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    .loan_box > .sky .ico-star-1 {
+      top: 30%;
+      left: 10%;
+    }
+
+    .loan_box > .sky .ico-star-2 {
+      top: 10%;
+      left: 20%;
+    }
+
+    .loan_box > .sky .ico-star-3 {
+      top: 25%;
+      left: 15%;
+    }
+
+    .loan_box > .sky .ico-star-4 {
+      top: 40%;
+      right: 15%;
+    }
+
+    .loan_box > .sky .ico-star-5 {
+      top: 43%;
+      right: 30%;
+    }
+
+    .loan_box > .sky .ico-star-6 {
+      top: 73%;
+      right: 27%;
+    }
+
+    .loan_box > .sky .ico-star-7 {
+      top: 65%;
+      left: 22%;
+    }
+
+    @keyframes clittering {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+    }
+
+    .ico-star-1 {
+      animation: clittering 2s infinite;
+    }
+
+    .ico-star-2 {
+      animation: clittering 3s infinite;
+    }
+
+    .ico-star-3 {
+      animation: clittering 5s infinite;
+    }
+
+    .ico-star-4 {
+      animation: clittering 2s infinite;
+    }
+
+    .ico-star-5 {
+      animation: clittering 4s infinite;
+    }
+
+    .ico-star-6 {
+      animation: clittering 1.8s infinite;
+    }
+
+    .ico-star-7 {
+      animation: clittering 3.5s infinite;
+    }
+    /* 대출박스 - 별 끝 */
     /*-------------------- 대출박스 끝 --------------------*/
   </style>
 
   <script>
     /* 발견되면 활성화시키는 라이브러리 시작 */
     function ActiveOnVisible__init() {
-      $('.active-on-visible').each(function(index, node) {
+      $('.active-on-visible').each(function (index, node) {
         var $node = $(node);
 
         var onFuncName = $node.attr('data-active-on-visible-on-func-name');
@@ -209,7 +320,7 @@
     function ActiveOnVisible__initOffset() {
       var windowHeight = $(window).height();
 
-      $('.active-on-visible:not(.actived)').each(function(index, node) {
+      $('.active-on-visible:not(.actived)').each(function (index, node) {
         var $node = $(node);
 
         var offsetTop = $node.offset().top;
@@ -218,30 +329,30 @@
         var translateX = matrix[12] || matrix[4];
         var translateY = matrix[13] || matrix[5];
 
-        if ( translateY ) {
+        if (translateY) {
           offsetTop -= translateY;
         }
 
         $node.attr('data-active-on-visible-offsetTop', offsetTop);
         $node.data('data-active-on-visible-offsetTop', offsetTop);
 
-        if ( !$node.attr('data-active-on-visible-diff-y') ) {
+        if (!$node.attr('data-active-on-visible-diff-y')) {
           $node.attr('data-active-on-visible-diff-y', '0');
         }
 
-        if ( !$node.attr('data-active-on-visible-delay') ) {
+        if (!$node.attr('data-active-on-visible-delay')) {
           $node.attr('data-active-on-visible-delay', '0');
         }
 
         var diffY = $node.attr('data-active-on-visible-diff-y');
         var delay = $node.attr('data-active-on-visible-delay');
 
-        if ( diffY.substr(-2, 2) == 'vh' ) {
+        if (diffY.substr(-2, 2) == 'vh') {
           diffY = parseInt(diffY);
 
           diffY = windowHeight * (diffY / 100);
         }
-        else if ( diffY.substr(-1, 1) == '%' ) {
+        else if (diffY.substr(-1, 1) == '%') {
           diffY = parseInt(diffY);
 
           diffY = $node.height() * (diffY / 100);
@@ -259,7 +370,7 @@
     }
 
     function ActiveOnVisible__checkAndActive() {
-      $('.active-on-visible:not(.actived)').each(function(index, node) {
+      $('.active-on-visible:not(.actived)').each(function (index, node) {
         var $node = $(node);
 
         var offsetTop = $node.data('data-active-on-visible-offsetTop') * 1;
@@ -273,26 +384,26 @@
         var windowHeight = $(window).height();
         var nodeHeight = $node.height();
 
-        if ( scrollTop + windowHeight + diffY > offsetTop ) {
-          setTimeout(function() {
-            if ( $node.hasClass('active') == false ) {
+        if (scrollTop + windowHeight + diffY > offsetTop) {
+          setTimeout(function () {
+            if ($node.hasClass('active') == false) {
               $node.addClass('active');
 
-              if ( $node.hasClass('can-active-once') ) {
+              if ($node.hasClass('can-active-once')) {
                 $node.addClass('actived');
               }
 
-              if ( window[onFuncName] ) {
+              if (window[onFuncName]) {
                 window[onFuncName]($node);
               }
             }
           }, delay);
         }
         else {
-          if ( $node.hasClass('active') ) {
+          if ($node.hasClass('active')) {
             $node.removeClass('active');
 
-            if ( window[offFuncName] ) {
+            if (window[offFuncName]) {
               window[offFuncName]($node);
             }
           }
@@ -300,10 +411,11 @@
       });
     }
 
-    $(function() {
+    $(function () {
       ActiveOnVisible__init();
     })
     /* 발견되면 활성화시키는 라이브러리 끝 */
   </script>
 </body>
+
 </html>
