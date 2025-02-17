@@ -10,6 +10,11 @@
     rel="stylesheet">
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- 슬릭 슬라이더 불러오기 -->
+  <!-- 무조건 제이쿼리 밑에다 놔야함 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <!-- lodash -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
   <title>카카오뱅크</title>
@@ -34,14 +39,27 @@
 
       <div class="slider_box">
         <div class="arrows">
-          <div><img src="/images/img-left.png" alt=""></div>
-          <div><img src="/images/img-right.png" alt=""></div>
+          <div class="btn_arrow_left"><img src="/images/img-left.png" alt=""></div>
+          <div class="btn_arrow_right"><img src="/images/img-right.png" alt=""></div>
         </div>
 
-        <div class="slides">
-          <div><img src="/images/card-1.png" alt=""></div>
-          <div class="center"><img src="/images/card-2.png" alt=""></div>
-          <div><img src="/images/card-3.png" alt=""></div>
+        <div class="slick">
+          <!-- .item*5>.img-box>.img[src=/images/card-$.png] -->
+          <div class="item">
+            <div class="img-box"><img src="/images/card-1.png" alt=""></div>
+          </div>
+          <div class="item">
+            <div class="img-box"><img src="/images/card-2.png" alt=""></div>
+          </div>
+          <div class="item">
+            <div class="img-box"><img src="/images/card-3.png" alt=""></div>
+          </div>
+          <div class="item">
+            <div class="img-box"><img src="/images/card-4.png" alt=""></div>
+          </div>
+          <div class="item">
+            <div class="img-box"><img src="/images/card-5.png" alt=""></div>
+          </div>
         </div>
       </div>
     </div>
@@ -184,45 +202,53 @@
       text-decoration: underline;
     }
 
+    /*-------------------- 슬라이드 시작 --------------------*/
     .checkcard_box .slider_box {      
-      margin-top: 110px;
       position: relative;
+      width: 660px;
+      margin: 80px auto 0 auto;
     }
-    .checkcard_box .slider_box .slides {
-      display: flex;
-      justify-content: center;
+    .checkcard_box .slider_box .slick .item > .img-box {
+      padding-top: 30px;
+      padding-bottom: 30px;      
     }
-    .checkcard_box .slider_box > .slides > div > img {
-      width: 240px;
-      display: block;
-    }
-    .checkcard_box .slider_box > .slides > div.center {
-      margin-left: -77px;
-      margin-right: -77px;
-      z-index: 1;
-    }
-    .checkcard_box .slider_box > .slides > div.center > img {
+    .checkcard_box .slider_box .slick .item.slick-center {
       transform: scale(1.17);
     }
     .checkcard_box .slider_box > .arrows > div {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 30px;
       cursor: pointer;
+      right: calc(100% + 100px);
     }
     .checkcard_box .slider_box > .arrows > div:last-child {
-      left: auto;
-      right: 30px;
+      left: calc(100% + 100px);
+      right: auto;
     }
     /* .checkcard_box .slider_box > .arrows > div:active {
       transform: translateY(-45%);
     } */
+    /*-------------------- 슬라이드 끝 --------------------*/
     /*-------------------- 체크카드 끝 --------------------*/
   </style>
 
   <script>
+    function SliderBox1__init() {
+        $('.slider_box > .slick').slick({
+            dots:false,
+            autoplay: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            centerMode:true,
+            centerPadding:0,
+            arrows:true,
+            prevArrow: ".slider_box > .arrows > .btn_arrow_left",
+            nextArrow: ".slider_box > .arrows > .btn_arrow_right",
+        });
+    }
     
+    SliderBox1__init();
   </script>
 </body>
 
